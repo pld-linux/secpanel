@@ -12,6 +12,8 @@ URL:		http://www.pingx.net/secpanel/
 Requires:	tcl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_prefix		/usr/X11R6
+
 %description
 SecPanel serves as a graphical user interface for managing and running
 SSH (Secure Shell) and SCP (Secure Copy) connections. Note: SecPanel
