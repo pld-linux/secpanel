@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Utilities
 Source0:	http://www.pingx.net/secpanel/%{name}-%{version}.tar.gz
+Requires:	tcl
 URL:		http://www.pingx.net/secpanel/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	tcl
@@ -16,10 +17,10 @@ SecPanel serves as a graphical user interface for managing and running SSH
 Note: SecPanel is not a new implementation of the SecureShell protocol or
 the ssh software-suite sh software-suite.
 
-%descrioption -l pl
-SecPanel jest grficznym interfejsem pozwalaj±cym uruchamiaæ i zarz±dzaæ
+%description -l pl
+SecPanel jest graficznym interfejsem pozwalaj±cym uruchamiaæ i zarz±dzaæ
 sesjami SSH(Secure Shell) i SCP (Secure Copy).
-Uwaga: SecPanel nie jest nowym± implementacj± protoko³u SecureShell.
+Uwaga: SecPanel nie jest now± implementacj± protoko³u SecureShell.
 
 %prep
 %setup -q
