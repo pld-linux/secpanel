@@ -10,8 +10,6 @@ URL:		http://www.pingx.net/secpanel/
 Requires:	tcl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 
 %description
 SecPanel serves as a graphical user interface for managing and running
