@@ -4,6 +4,6 @@ Comment=Remembers telnet and SSH sessions
 Comment[pl]=Zapamieje sesje telnet i SSH
 Icon=secpanel.png
 Exec=secpanel
-Terminal=0
+Terminal=false
 Type=Application
 # vi: encoding=utf-8
