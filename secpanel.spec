@@ -2,7 +2,7 @@ Summary:	Visual management of SSH connections
 Summary(pl):	Wizualna nak³adka na klienta SSH
 Name:		secpanel
 Version:	0.4.3
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v2
 Group:		X11/Applications/Networking
