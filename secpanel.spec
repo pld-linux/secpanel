@@ -34,14 +34,13 @@ install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/secpanel}
 install src/bin/secpanel $RPM_BUILD_ROOT%{_bindir}
 cp -r src/lib/secpanel/* $RPM_BUILD_ROOT%{_libdir}/secpanel
 
-gzip -9nf README CHANGES
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc README CHANGES
 %attr(755,root,root) %{_bindir}/*
 %dir %{_libdir}/secpanel
 %attr(755,root,root) %{_libdir}/secpanel/listserver.tcl
