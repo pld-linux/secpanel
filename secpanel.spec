@@ -1,12 +1,12 @@
 Summary:	Visual management of SSH connections
 Summary(pl):	Wizualna nak³adka na klienta SSH
 Name:		secpanel
-Version:	0.40
+Version:	0.41
 Release:	1
 License:	GPL v2
 Group:		X11/Applications/Networking
 Source0:	http://www.pingx.net/secpanel/%{name}-%{version}.tar.gz
-# Source0-md5:	5687ad17da97250672f91c32d069be23
+# Source0-md5:	3d0df052986506edd05905be854c2a3a
 Source1:	%{name}.desktop
 URL:		http://www.pingx.net/secpanel/
 Requires:	tcl
@@ -47,6 +47,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/secpanel/secpanel*
 %{_libdir}/secpanel/convert_history.tcl
 %{_libdir}/secpanel/gui.tcl
+%{_libdir}/secpanel/keydistribute.tcl
 %{_libdir}/secpanel/default*
 %{_libdir}/secpanel/images
 %{_applnkdir}/Network/Communications/*.desktop
