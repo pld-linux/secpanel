@@ -1,15 +1,18 @@
 Summary:	Visual management of SSH connections
 Summary(pl):	Wizualna nak³adka na klienta SSH
 Name:		secpanel
-Version:	0.32
+Version:	0.41
 Release:	1
-License:	GPL
-Group:		X11/Applications
+License:	GPL v2
+Group:		X11/Applications/Networking
 Source0:	http://www.pingx.net/secpanel/%{name}-%{version}.tar.gz
+# Source0-md5:	3d0df052986506edd05905be854c2a3a
+Source1:	%{name}.desktop
 URL:		http://www.pingx.net/secpanel/
 Requires:	tcl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define		_prefix		/usr/X11R6
 
 %description
 SecPanel serves as a graphical user interface for managing and running
@@ -27,11 +30,11 @@ SecPanel nie jest now± implementacj± protoko³u SecureShell.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/secpanel}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/secpanel,%{_applnkdir}/Network/Communications}
 
 install src/bin/secpanel $RPM_BUILD_ROOT%{_bindir}
 cp -r src/lib/secpanel/* $RPM_BUILD_ROOT%{_libdir}/secpanel
-
+install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/Communications
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -43,6 +46,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/secpanel
 %attr(755,root,root) %{_libdir}/secpanel/listserver.tcl
 %attr(755,root,root) %{_libdir}/secpanel/secpanel*
+%{_libdir}/secpanel/convert_history.tcl
 %{_libdir}/secpanel/gui.tcl
+%{_libdir}/secpanel/keydistribute.tcl
 %{_libdir}/secpanel/default*
 %{_libdir}/secpanel/images
+%{_applnkdir}/Network/Communications/*.desktop
