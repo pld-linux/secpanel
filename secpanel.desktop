@@ -2,9 +2,10 @@
 Encoding=UTF-8
 Name=secpanel
 Comment=Remembers telnet and SSH sessions
-Comment[pl]=Zapamieje sesje telnet i SSH
+Comment[pl]=Zapamiętuje sesje telnet i SSH
 Icon=secpanel.png
 Exec=secpanel
 Terminal=false
 Type=Application
+Categories=Network;RemoteAccess;
 # vi: encoding=utf-8
