@@ -6,6 +6,7 @@ Release:	1
 License:	GPL v2
 Group:		X11/Applications/Networking
 Source0:	http://www.pingx.net/secpanel/%{name}-%{version}.tar.gz
+# Source0-md5:	5687ad17da97250672f91c32d069be23
 Source1:	%{name}.desktop
 URL:		http://www.pingx.net/secpanel/
 Requires:	tcl
