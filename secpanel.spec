@@ -17,7 +17,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 SecPanel serves as a graphical user interface for managing and running
 SSH (Secure Shell) and SCP (Secure Copy) connections. Note: SecPanel
 is not a new implementation of the SecureShell protocol or the ssh
-software-suite sh software-suite.
+software-suite.
 
 %description -l pl
 SecPanel jest graficznym interfejsem pozwalaj±cym uruchamiaæ i
