@@ -2,7 +2,7 @@ Summary:	Visual management of SSH connections
 Summary(pl):	Wizualna nak³adka na klienta SSH
 Name:		secpanel
 Version:	0.41
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications/Networking
 Source0:	http://www.pingx.net/secpanel/%{name}-%{version}.tar.gz
