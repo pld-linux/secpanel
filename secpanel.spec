@@ -1,5 +1,5 @@
 Summary:	Visual management of SSH connections
-Summary(pl):	Wisualna nak³adka na klienta SSH
+Summary(pl):	Wizualna nak³adka na klienta SSH
 Name:		secpanel
 Version:	0.32
 Release:	1
@@ -17,8 +17,9 @@ Note: SecPanel is not a new implementation of the SecureShell protocol or
 the ssh software-suite sh software-suite.
 
 %descrioption -l pl
-SecPanel jest graficzna nak³adk± na klienta SSH 
-
+SecPanel jest grficznym interfejsem pozwalaj±cym uruchamiaæ i zarz±dzaæ
+sesjami SSH(Secure Shell) i SCP (Secure Copy).
+Uwaga: SecPanel nie jest nowym± implementacj± protoko³u SecureShell.
 
 %prep
 %setup -q
@@ -30,7 +31,6 @@ install -d $RPM_BUILD_ROOT{%{_sbindir},%{_libdir}/secpanel}
 
 cp src/bin/secpanel $RPM_BUILD_ROOT%{_sbindir}
 cp -r src/lib/secpanel/* $RPM_BUILD_ROOT%{_libdir}/secpanel
-
 
 gzip -9nf README CHANGES
 
