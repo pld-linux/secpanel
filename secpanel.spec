@@ -1,16 +1,19 @@
 Summary:	Visual management of SSH connections
 Summary(pl):	Wizualna nak³adka na klienta SSH
 Name:		secpanel
-Version:	0.41
-Release:	2
+Version:	0.4.3
+Release:	1
+Epoch:		1
 License:	GPL v2
 Group:		X11/Applications/Networking
 Source0:	http://www.pingx.net/secpanel/%{name}-%{version}.tar.gz
-# Source0-md5:	3d0df052986506edd05905be854c2a3a
+# Source0-md5:	99f8e26f882e95399322e75ad777eacf
 Source1:	%{name}.desktop
 URL:		http://www.pingx.net/secpanel/
 Requires:	tcl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_desktopdir	%{_applnkdir}/Network/Communications
 
 %description
 SecPanel serves as a graphical user interface for managing and running
@@ -28,11 +31,11 @@ SecPanel nie jest now± implementacj± protoko³u SecureShell.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/secpanel,%{_applnkdir}/Network/Communications}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/secpanel,%{_desktopdir}}
 
 install src/bin/secpanel $RPM_BUILD_ROOT%{_bindir}
 cp -r src/lib/secpanel/* $RPM_BUILD_ROOT%{_libdir}/secpanel
-install %{SOURCE1} $RPM_BUILD_ROOT%{_applnkdir}/Network/Communications
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -46,7 +49,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/secpanel/secpanel*
 %{_libdir}/secpanel/convert_history.tcl
 %{_libdir}/secpanel/gui.tcl
-%{_libdir}/secpanel/keydistribute.tcl
 %{_libdir}/secpanel/default*
 %{_libdir}/secpanel/images
-%{_applnkdir}/Network/Communications/*.desktop
+%{_desktopdir}/*.desktop
