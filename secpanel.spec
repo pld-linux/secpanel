@@ -1,22 +1,23 @@
 # TODO:
-# - there is nothing binary in that package - maybe better put
-#   it to %{datadir}, not %{libdir} ?
+# - some icon for desktop
 Summary:	Visual management of SSH connections
 Summary(pl):	Wizualna nak³adka na klienta SSH
 Name:		secpanel
-Version:	0.4.3
-Release:	4
+Version:	0.5.1
+Release:	1
 Epoch:		1
 License:	GPL v2
 Group:		X11/Applications/Networking
 Source0:	http://www.pingx.net/secpanel/%{name}-%{version}.tar.gz
-# Source0-md5:	99f8e26f882e95399322e75ad777eacf
+# Source0-md5:	c0694dbc5c1970e12eba552c2755482f
 Source1:	%{name}.desktop
+Patch0:		%{name}-data_location.patch
 URL:		http://www.pingx.net/secpanel/
 Requires:	tcl
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_libdir		/usr/lib
+%define		_appdir		%{_datadir}/%{name}
 
 %description
 SecPanel serves as a graphical user interface for managing and running
@@ -31,13 +32,14 @@ SecPanel nie jest now± implementacj± protoko³u SecureShell.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir}/secpanel,%{_desktopdir}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_appdir},%{_desktopdir}}
 
 install src/bin/secpanel $RPM_BUILD_ROOT%{_bindir}
-cp -r src/lib/secpanel/* $RPM_BUILD_ROOT%{_libdir}/secpanel
+cp -r src/lib/secpanel/* $RPM_BUILD_ROOT%{_appdir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %clean
@@ -47,11 +49,14 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README CHANGES
 %attr(755,root,root) %{_bindir}/*
-%dir %{_libdir}/secpanel
-%attr(755,root,root) %{_libdir}/secpanel/listserver.tcl
-%attr(755,root,root) %{_libdir}/secpanel/secpanel*
-%{_libdir}/secpanel/convert_history.tcl
-%{_libdir}/secpanel/gui.tcl
-%{_libdir}/secpanel/default*
-%{_libdir}/secpanel/images
+%dir %{_appdir}
+%attr(755,root,root) %{_appdir}/convert_profile.tcl
+%attr(755,root,root) %{_appdir}/listserver.tcl
+%attr(755,root,root) %{_appdir}/gui.tcl
+%attr(755,root,root) %{_appdir}/secpanel*
+%{_appdir}/convert_history.tcl
+%{_appdir}/default*
+%{_appdir}/export_profiles.tcl
+%{_appdir}/images
+%{_appdir}/sp_scp.tcl
 %{_desktopdir}/*.desktop
