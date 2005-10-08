@@ -1,0 +1,13 @@
+--- ./src/bin/secpanel.org	2005-10-08 22:04:18.000000000 +0000
++++ ./src/bin/secpanel	2005-10-08 22:24:01.000000000 +0000
+@@ -29,8 +29,8 @@
+ 
+ set spversion 0.5.1
+ 
+-set libdir "[file dirname [info script]]/../lib/secpanel"
+-# set libdir "./lib"
++#set libdir "[file dirname [info script]]/../lib/secpanel"
++set libdir "/usr/share/secpanel"
+ set sshdir "$env(HOME)/.ssh"
+ 
+ set scpcode 0
