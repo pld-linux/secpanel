@@ -1,0 +1,11 @@
+--- ./src/bin/secpanel.org	2006-10-06 10:19:56.000000000 +0200
++++ ./src/bin/secpanel	2006-10-06 10:20:24.000000000 +0200
+@@ -1180,7 +1180,7 @@
+ 
+     set cfr "$cf-run"
+     set crfile [open "$cfr" w]
+-    set runstring "exec $configs(xtermbin) $icontag $titlepar \"SSH Connection - $title\" \
++    set runstring "exec $configs(xtermbin) $icontag $titlepar \"SSH - $title\" \
+ 	    -e $quotepar $waittag $woption $cf $woption $quotepar"
+     puts $crfile $runstring
+     close $crfile
