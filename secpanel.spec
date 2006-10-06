@@ -4,7 +4,7 @@ Summary:	Visual management of SSH connections
 Summary(pl):	Wizualna nak³adka na klienta SSH
 Name:		secpanel
 Version:	0.5.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL v2
 Group:		X11/Applications/Networking
@@ -12,6 +12,7 @@ Source0:	http://www.pingx.net/secpanel/%{name}-%{version}.tar.gz
 # Source0-md5:	c0694dbc5c1970e12eba552c2755482f
 Source1:	%{name}.desktop
 Patch0:		%{name}-data_location.patch
+Patch1:		%{name}-title.patch
 URL:		http://www.pingx.net/secpanel/
 Requires:	tcl
 BuildArch:	noarch
@@ -33,6 +34,7 @@ SecPanel nie jest now± implementacj± protoko³u SecureShell.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
