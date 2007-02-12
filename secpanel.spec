@@ -1,7 +1,7 @@
 # TODO:
 # - some icon for desktop
 Summary:	Visual management of SSH connections
-Summary(pl.UTF-8):   Wizualna nakładka na klienta SSH
+Summary(pl.UTF-8):	Wizualna nakładka na klienta SSH
 Name:		secpanel
 Version:	0.5.1
 Release:	2
