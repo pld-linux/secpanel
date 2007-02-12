@@ -1,7 +1,7 @@
 # TODO:
 # - some icon for desktop
 Summary:	Visual management of SSH connections
-Summary(pl):	Wizualna nak³adka na klienta SSH
+Summary(pl.UTF-8):   Wizualna nakÅ‚adka na klienta SSH
 Name:		secpanel
 Version:	0.5.1
 Release:	2
@@ -26,10 +26,10 @@ SSH (Secure Shell) and SCP (Secure Copy) connections. Note: SecPanel
 is not a new implementation of the SecureShell protocol or the ssh
 software-suite.
 
-%description -l pl
-SecPanel jest graficznym interfejsem pozwalaj±cym uruchamiaæ i
-zarz±dzaæ sesjami SSH (Secure Shell) i SCP (Secure Copy). Uwaga:
-SecPanel nie jest now± implementacj± protoko³u SecureShell.
+%description -l pl.UTF-8
+SecPanel jest graficznym interfejsem pozwalajÄ…cym uruchamiaÄ‡ i
+zarzÄ…dzaÄ‡ sesjami SSH (Secure Shell) i SCP (Secure Copy). Uwaga:
+SecPanel nie jest nowÄ… implementacjÄ… protokoÅ‚u SecureShell.
 
 %prep
 %setup -q
