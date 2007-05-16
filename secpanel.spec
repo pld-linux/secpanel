@@ -1,5 +1,6 @@
 # TODO:
 # - some icon for desktop
+# - fix source URL
 Summary:	Visual management of SSH connections
 Summary(pl.UTF-8):	Wizualna nakładka na klienta SSH
 Name:		secpanel
@@ -13,7 +14,7 @@ Source0:	http://www.pingx.net/secpanel/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
 Patch0:		%{name}-data_location.patch
 Patch1:		%{name}-title.patch
-URL:		http://www.pingx.net/secpanel/
+URL:		http://secpanel.mymediahost.de/
 Requires:	tcl
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
