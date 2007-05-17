@@ -15,7 +15,7 @@ Source1:	%{name}.desktop
 Patch0:		%{name}-data_location.patch
 Patch1:		%{name}-title.patch
 URL:		http://secpanel.mymediahost.de/
-Requires:	tcl
+Requires:	tk
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
