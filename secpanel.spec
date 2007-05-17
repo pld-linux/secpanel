@@ -1,6 +1,5 @@
 # TODO:
 # - some icon for desktop
-# - fix source URL
 Summary:	Visual management of SSH connections
 Summary(pl.UTF-8):	Wizualna nakładka na klienta SSH
 Name:		secpanel
@@ -9,7 +8,8 @@ Release:	2
 Epoch:		1
 License:	GPL v2
 Group:		X11/Applications/Networking
-Source0:	http://www.pingx.net/secpanel/%{name}-%{version}.tar.gz
+#Source0:	http://secpanel.mymediahost.de/files/u1/%{name}-%{version}.tar.gz
+Source0:	http://secpanel.mymediahost.de/files/u1/%{name}-0_5_1.tgz
 # Source0-md5:	c0694dbc5c1970e12eba552c2755482f
 Source1:	%{name}.desktop
 Patch0:		%{name}-data_location.patch
