@@ -3,18 +3,17 @@
 Summary:	Visual management of SSH connections
 Summary(pl.UTF-8):	Wizualna nakładka na klienta SSH
 Name:		secpanel
-Version:	0.5.1
-Release:	2
+Version:	0.5.2
+Release:	1
 Epoch:		1
 License:	GPL v2
 Group:		X11/Applications/Networking
-#Source0:	http://secpanel.mymediahost.de/files/u1/%{name}-%{version}.tar.gz
-Source0:	http://secpanel.mymediahost.de/files/u1/%{name}-0_5_1.tgz
-# Source0-md5:	c0694dbc5c1970e12eba552c2755482f
+Source0:	http://themediahost.de/secpanel/data/%{name}-%{version}.tar.gz
+# Source0-md5:	1b8ec799d94dde74d152e5c22df2e6b3
 Source1:	%{name}.desktop
 Patch0:		%{name}-data_location.patch
 Patch1:		%{name}-title.patch
-URL:		http://secpanel.mymediahost.de/
+URL:		http://themediahost.de/secpanel/
 Requires:	tk
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
