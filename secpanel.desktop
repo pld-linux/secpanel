@@ -1,9 +1,8 @@
 [Desktop Entry]
-Encoding=UTF-8
 Name=secpanel
 Comment=Remembers telnet and SSH sessions
 Comment[pl]=Zapamiętuje sesje telnet i SSH
-Icon=secpanel.png
+Icon=secpanel
 Exec=secpanel
 Terminal=false
 Type=Application
