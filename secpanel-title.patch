@@ -1,11 +1,11 @@
---- ./src/bin/secpanel.org	2006-10-06 10:19:56.000000000 +0200
-+++ ./src/bin/secpanel	2006-10-06 10:20:24.000000000 +0200
-@@ -1180,7 +1180,7 @@
+--- ./usr/local/bin/secpanel.org	2008-03-14 00:46:25.201669527 +0100
++++ ./usr/local/bin/secpanel	2008-03-14 00:47:02.600124055 +0100
+@@ -1297,7 +1297,7 @@ proc connect {{cm ""}} {
  
-     set cfr "$cf-run"
-     set crfile [open "$cfr" w]
--    set runstring "exec $configs(xtermbin) $icontag $titlepar \"SSH Connection - $title\" \
-+    set runstring "exec $configs(xtermbin) $icontag $titlepar \"SSH - $title\" \
+ 	set cfr "$cf-run"
+ 	set crfile [open "$cfr" w]
+-	set runstring "exec $configs(xtermbin) $icontag $titlepar \"SSH Connection - $title\" \
++	set runstring "exec $configs(xtermbin) $icontag $titlepar \"SSH - $title\" \
  	    -e $quotepar $waittag $woption $cf $woption $quotepar"
-     puts $crfile $runstring
-     close $crfile
+ 	puts $crfile $runstring
+ 	close $crfile

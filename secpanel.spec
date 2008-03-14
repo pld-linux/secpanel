@@ -3,13 +3,13 @@
 Summary:	Visual management of SSH connections
 Summary(pl.UTF-8):	Wizualna nakładka na klienta SSH
 Name:		secpanel
-Version:	0.5.2
+Version:	0.5.3
 Release:	1
 Epoch:		1
 License:	GPL v2
 Group:		X11/Applications/Networking
-Source0:	http://themediahost.de/secpanel/data/%{name}-%{version}.tar.gz
-# Source0-md5:	1b8ec799d94dde74d152e5c22df2e6b3
+Source0:	http://themediahost.de/secpanel/data/%{name}-%{version}.tgz
+# Source0-md5:	99a261ffd5a122e09ebbd82381427b2f
 Source1:	%{name}.desktop
 Patch0:		%{name}-data_location.patch
 Patch1:		%{name}-title.patch
@@ -32,7 +32,7 @@ zarządzać sesjami SSH (Secure Shell) i SCP (Secure Copy). Uwaga:
 SecPanel nie jest nową implementacją protokołu SecureShell.
 
 %prep
-%setup -q
+%setup -c -q
 %patch0 -p1
 %patch1 -p1
 
@@ -40,8 +40,9 @@ SecPanel nie jest nową implementacją protokołu SecureShell.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_appdir},%{_desktopdir}}
 
-install src/bin/secpanel $RPM_BUILD_ROOT%{_bindir}
-cp -r src/lib/secpanel/* $RPM_BUILD_ROOT%{_appdir}
+cd usr/local
+install bin/secpanel $RPM_BUILD_ROOT%{_bindir}
+cp -r lib/secpanel/* $RPM_BUILD_ROOT%{_appdir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %clean
@@ -49,12 +50,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README CHANGES
+%doc usr/share/doc/%{name}-%{version}/CHANGES
+%doc usr/share/doc/%{name}-%{version}/README
 %attr(755,root,root) %{_bindir}/*
 %dir %{_appdir}
 %attr(755,root,root) %{_appdir}/convert_profile.tcl
-%attr(755,root,root) %{_appdir}/listserver.tcl
+%attr(755,root,root) %{_appdir}/dppw.tcl
 %attr(755,root,root) %{_appdir}/gui.tcl
+%attr(755,root,root) %{_appdir}/listserver.tcl
 %attr(755,root,root) %{_appdir}/secpanel*
 %{_appdir}/convert_history.tcl
 %{_appdir}/default*
