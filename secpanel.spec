@@ -13,6 +13,7 @@ Source0:	http://themediahost.de/secpanel/data/%{name}-%{version}.tgz
 Source1:	%{name}.desktop
 Patch0:		%{name}-data_location.patch
 Patch1:		%{name}-title.patch
+Patch2:		%{name}-distkeys_with_port.patch
 URL:		http://themediahost.de/secpanel/
 Requires:	tk
 BuildArch:	noarch
@@ -35,6 +36,7 @@ SecPanel nie jest nową implementacją protokołu SecureShell.
 %setup -c -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
