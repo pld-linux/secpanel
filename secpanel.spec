@@ -1,13 +1,13 @@
 Summary:	Visual management of SSH connections
 Summary(pl.UTF-8):	Wizualna nakładka na klienta SSH
 Name:		secpanel
-Version:	0.5.4
+Version:	0.6.0
 Release:	1
 Epoch:		1
-License:	GPL v2
+License:	GPL v2+
 Group:		X11/Applications/Networking
 Source0:	http://themediahost.de/secpanel/data/%{name}-%{version}.tgz
-# Source0-md5:	528387e1511e2b3581c59e587a16cdf4
+# Source0-md5:	5dd1c5a773a96cb7092d3c52a552e298
 Source1:	%{name}.desktop
 Patch0:		%{name}-data_location.patch
 Patch1:		%{name}-title.patch
@@ -50,19 +50,16 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc usr/share/doc/%{name}-%{version}/CHANGES
-%doc usr/share/doc/%{name}-%{version}/README
 %attr(755,root,root) %{_bindir}/*
 %dir %{_appdir}
 %attr(755,root,root) %{_appdir}/convert_profile.tcl
 %attr(755,root,root) %{_appdir}/dppw.tcl
 %attr(755,root,root) %{_appdir}/gui.tcl
-%attr(755,root,root) %{_appdir}/listserver.tcl
 %attr(755,root,root) %{_appdir}/secpanel*
 %{_appdir}/convert_history.tcl
 %{_appdir}/default*
 %{_appdir}/export_profiles.tcl
 %{_appdir}/images
-%{_appdir}/sp_scp.tcl
-%{_appdir}/termdefs
+%{_appdir}/spdistkey
+%{_appdir}/termdefs.txt
 %{_desktopdir}/*.desktop
