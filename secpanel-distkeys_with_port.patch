@@ -1,25 +1,14 @@
---- ./usr/local/bin/secpanel.org	2009-04-10 10:34:38.274315429 +0200
-+++ ./usr/local/bin/secpanel	2009-04-10 10:33:00.667776587 +0200
-@@ -977,7 +977,7 @@ proc distkey {key connectionprofiles} {
- 	    }
- 	}
-     
--	set singleactstring "$libdir/secpanel.dist $host $user $key $configs(sshbin)"
-+	set singleactstring "$libdir/secpanel.dist $host $port $user $key $configs(sshbin)"
- 	set connstring "$connstring $singleactstring"
- 	set connstring "$connstring \n\n\necho ==============================================================\n\n"
- 
---- ./usr/local/lib/secpanel/secpanel.dist.org	2009-04-10 10:34:59.994672725 +0200
-+++ ./usr/local/lib/secpanel/secpanel.dist	2009-04-10 10:35:21.017525894 +0200
-@@ -8,23 +8,30 @@
- # Author: Steffen Leich <steffen.leich _at_ gmail.com>
+--- secpanel-0.6.0/usr/local/lib/secpanel/spdistkey~	2010-02-19 11:50:57.000000000 +0100
++++ secpanel-0.6.0/usr/local/lib/secpanel/spdistkey	2010-02-22 16:47:16.979259946 +0100
+@@ -8,8 +8,14 @@
+ # Author: Steffen Leich-Nienhaus <steffen.leich _at_ gmail.com>
  ##########################################################################
  
 +function do_exit {
-+	echo
-+	echo -e "Key-Distribution finished\nPress <Return> to continue"
-+	read
-+	exit
++       echo
++       echo -e "Key-Distribution finished\nPress <Return> to continue"
++       read
++       exit
 +}
  
 -if [ -z $4 ]
@@ -27,44 +16,7 @@
  then
  cat <<EOF
  
- 	SecPanel
- 	Shellscript for distributing public keys to remote hosts
--	Usage: secpanel_distkey.sh <host> <user> <keyfile> <sshbin>
-+	Usage: secpanel_distkey.sh <host> <port> <user> <keyfile> <sshbin>
- 
- EOF
-     exit 2
- fi
- 
- HOST=$1
--USER=$2
--IDENTITY=$3
--SSHBIN=$4
-+PORT=$2
-+USER=$3
-+IDENTITY=$4
-+SSHBIN=$5
- 
- if [ ! -s $IDENTITY ]
- then
-@@ -38,14 +45,14 @@ cat <<EOF
-     SecPanel - Distribution of public keys to remote hosts
-     ------------------------------------------------------
- 
--    Connecting to $HOST as $USER
-+    Connecting to $HOST:$PORT as $USER
-     with key $IDENTITY
- 
-     First we try to check if the key is already on the target host.
- 
- EOF
- 
--$SSHBIN -l $USER $HOST "mkdir \$HOME/.ssh 2>/dev/null; grep '$(cat $IDENTITY)' \$HOME/.ssh/authorized_keys > /dev/null 2>&1"
-+$SSHBIN -l $USER -p $PORT $HOST "mkdir \$HOME/.ssh 2>/dev/null; grep '$(cat $IDENTITY)' \$HOME/.ssh/authorized_keys > /dev/null 2>&1"
- 
- DISTRET=$?
- 
-@@ -58,7 +65,7 @@ elif [ $DISTRET = 255 ]
+@@ -59,7 +65,7 @@
  then
      echo
      echo "There was an error connecting to the remote site"
@@ -73,7 +25,7 @@
      echo
      echo "Canceling the key-transfer"
      do_exit
-@@ -67,6 +74,6 @@ else
+@@ -68,6 +74,6 @@
      echo "    The key could not be found on this host"
      echo "    -> Transfering your public key to remote host"
      echo
