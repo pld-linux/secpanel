@@ -1,13 +1,13 @@
 Summary:	Visual management of SSH connections
 Summary(pl.UTF-8):	Wizualna nakładka na klienta SSH
 Name:		secpanel
-Version:	0.6.0
+Version:	0.6.1
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Networking
-Source0:	http://themediahost.de/secpanel/data/%{name}-%{version}.tgz
-# Source0-md5:	5dd1c5a773a96cb7092d3c52a552e298
+Source0:	http://downloads.sourceforge.net/secpanel/%{name}-%{version}.tgz
+# Source0-md5:	c94e598bc66d38421333b74a28abaa17
 Source1:	%{name}.desktop
 Patch0:		%{name}-data_location.patch
 Patch1:		%{name}-title.patch
@@ -50,7 +50,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/secpanel
 %dir %{_appdir}
 %attr(755,root,root) %{_appdir}/convert_profile.tcl
 %attr(755,root,root) %{_appdir}/dppw.tcl
@@ -62,4 +62,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_appdir}/images
 %{_appdir}/spdistkey
 %{_appdir}/termdefs.txt
-%{_desktopdir}/*.desktop
+%{_desktopdir}/secpanel.desktop
