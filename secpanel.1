@@ -1,0 +1,40 @@
+.TH SECPANEL 1 2002-06-30 "Debian Project"
+.SH NAME
+secpanel \- a Tcl/Tk front-end to ssh and scp
+.SH SYNOPSIS
+.B secpanel
+.SH DESCRIPTION
+SecPanel serves as a graphical user interface for managing and running SSH
+(Secure Shell) and SCP (Secure Copy) connections.
+.PP
+Note: SecPanel is not a new implementation of the SecureShell protocol or
+the ssh software-suite.
+.PP
+SecPanel sits on top of SSH software-suites and supports the SSH.com and the
+OpenSSH-version.  You may get information about these programs at
+http://www.ssh.com respectively at http://www.openssh.com.
+.PP
+SecPanel is written entirely in pure Tcl/Tk and does not need any extensions
+but it requires Version 8.x of Tcl and Tk.
+.PP
+SecPanel is free software and is released under the conditions of the GNU
+General Public License.  See the file COPYING and notes in the source code
+for details.
+.SS Features
+Saves and manages profiles of different SecureShell connections.  Gives an
+ftpclient-like graphical interface/file listing for launching SCP-transfers.
+Editing of profiles mainly by mouse-clicking.  Gives list of profiles to
+connect to.  One list for default connections using a default profile and
+another list for managing special connections e.g. port-forwarding setups
+for reading mail.  Management of the ssh-agent.  Support for generating and
+distributing keys for public key authentication.
+.SS "Planned Features"
+Support for the SSH2 protocol related options, configurations and special
+features of SSH.com's and OpenSSH's suites.
+.SH AUTHOR
+Steffen Leich <secpanel@pingx.net>
+.SH "SEE ALSO"
+.BR ssh (1),
+.BR scp (1),
+.BR ssh-askpass (1),
+.BR ssh-agent (1)
