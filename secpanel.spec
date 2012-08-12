@@ -2,13 +2,15 @@ Summary:	Visual management of SSH connections
 Summary(pl.UTF-8):	Wizualna nakładka na klienta SSH
 Name:		secpanel
 Version:	0.6.1
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Networking
 Source0:	http://downloads.sourceforge.net/secpanel/%{name}-%{version}.tgz
 # Source0-md5:	c94e598bc66d38421333b74a28abaa17
 Source1:	%{name}.desktop
+Source2:	%{name}.1
+Source3:	%{name}.xpm
 Patch0:		%{name}-data_location.patch
 Patch1:		%{name}-title.patch
 Patch2:		%{name}-distkeys_with_port.patch
@@ -38,12 +40,14 @@ SecPanel nie jest nową implementacją protokołu SecureShell.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_appdir},%{_desktopdir}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_appdir},%{_desktopdir},%{_mandir}/man1,%{_pixmapsdir}}
 
 cd usr/local
 install bin/secpanel $RPM_BUILD_ROOT%{_bindir}
 cp -r lib/secpanel/* $RPM_BUILD_ROOT%{_appdir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
+install %{SOURCE2} $RPM_BUILD_ROOT%{_mandir}/man1/
+install %{SOURCE3} $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -63,3 +67,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_appdir}/images
 %{_appdir}/termdefs.txt
 %{_desktopdir}/secpanel.desktop
+%{_pixmapsdir}/*xpm
+%{_mandir}/man1/*.1*
