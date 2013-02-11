@@ -1,0 +1,15 @@
+--- ./usr/local/lib/secpanel/termdefs.txt.org	2010-02-19 11:50:57.000000000 +0100
++++ ./usr/local/lib/secpanel/termdefs.txt	2013-02-11 12:18:13.536953618 +0100
+@@ -58,6 +58,12 @@ set termtype(XFCE-Terminal_iconpar) ""
+ set termtype(XFCE-Terminal_execpar) "-x"
+ set termtype(XFCE-Terminal_path) "Terminal"
+ 
++set termtype(XFCE4-Terminal_titlepar) "--title"
++set termtype(XFCE4-Terminal_quotepar) ""
++set termtype(XFCE4-Terminal_iconpar) ""
++set termtype(XFCE4-Terminal_execpar) "-x"
++set termtype(XFCE4-Terminal_path) "xfce4-terminal"
++
+ set termtype(Putty's-Terminal_titlepar) "-title"
+ set termtype(Putty's-Terminal_quotepar) ""
+ set termtype(Putty's-Terminal_iconpar) ""

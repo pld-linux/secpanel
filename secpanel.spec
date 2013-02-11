@@ -2,7 +2,7 @@ Summary:	Visual management of SSH connections
 Summary(pl.UTF-8):	Wizualna nakładka na klienta SSH
 Name:		secpanel
 Version:	0.6.1
-Release:	3
+Release:	3.1
 Epoch:		1
 License:	GPL v2+
 Group:		X11/Applications/Networking
@@ -14,6 +14,7 @@ Source3:	%{name}.xpm
 Patch0:		%{name}-data_location.patch
 Patch1:		%{name}-title.patch
 Patch2:		%{name}-distkeys_with_port.patch
+Patch3:		%{name}-xfce4terminal.patch
 URL:		http://themediahost.de/secpanel/
 Requires:	tk
 BuildArch:	noarch
@@ -37,6 +38,7 @@ SecPanel nie jest nową implementacją protokołu SecureShell.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
