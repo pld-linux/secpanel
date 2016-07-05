@@ -5,7 +5,7 @@
  			$lf_tag $rf_tag $host $command_tag"
  
 -		set runstring "exec $configs(xtermbin) $icontag $titlepar \"SSH Connection - $title\" \
-+		set runstring "exec $configs(xtermbin) $icontag $titlepar \"SSH - $title\" \
++		set runstring "exec $configs(xtermbin) $icontag $titlepar \"SSH: $title\" \
  			$execpar $quotepar $waittag $woption <CONNFILE> $woption $quotepar"
  
  		provrunfile term bg $connstring $runstring
